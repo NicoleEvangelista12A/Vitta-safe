@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.cadastro-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  /* Degradê tecnológico misturado com a imagem de fundo por URL */
+  background: linear-gradient(
+    135deg, 
+    rgba(38, 41, 180, 0.85) 0%, 
+    rgba(21, 65, 92, 0.7) 40%, 
+    rgba(60, 156, 168, 0.5) 75%, 
+    rgba(38, 41, 180, 0.85) 100%
+  ), 
+  url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 6%;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #a0a0b0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.btn-cadastrar {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  border-radius: 4px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  z-index: 5;
+}
+
+.form-card {
+  background: rgba(20, 16, 35, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: #8b85a0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.form-header h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  color: #ffffff;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(25, 20, 45, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input::placeholder {
+  color: #6c6580;
+}
+
+form input:focus {
+  border-color: #8b5cf6;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0 15px 0;
+  font-size: 0.85rem;
+  color: #a0a0b0;
+}
+
+.terms input {
+  accent-color: #8b5cf6;
+  cursor: pointer;
+}
+
+.terms a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  color: #0d0b1e;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: #f0f0f5;
+  transform: translateY(-1px);
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #a0a0b0;
+  text-align: center;
+}
+
+.login-link a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
