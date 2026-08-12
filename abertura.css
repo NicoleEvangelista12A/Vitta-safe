@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0d0b1e;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.splash-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        135deg, 
+        rgba(15, 12, 41, 0.95) 0%, 
+        rgba(38, 41, 180, 0.75) 50%, 
+        rgba(13, 11, 30, 0.95) 100%
+    ),
+    url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Orbe de luz brilhante de fundo com animação */
+.glow-orb {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(38, 41, 180, 0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+.splash-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Badge superior */
+.badge-tech {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    backdrop-filter: blur(8px);
+    animation: slideDown 1s ease-out;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #38bdf8;
+    animation: blink 1.5s infinite;
+}
+
+/* Título de Impacto */
+.splash-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+    animation: scaleUp 1s ease-out;
+}
+
+.splash-subtitle {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 550px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Botão Tecnológico com Efeito */
+.action-box {
+    position: relative;
+    animation: slideUp 1s ease-out;
+}
+
+.btn-enter {
+    position: relative;
+    display: inline-block;
+    padding: 16px 36px;
+    background: #ffffff;
+    color: #0d0b1e;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn-enter:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+    background: #f8fafc;
+}
+
+.btn-enter:active {
+    transform: translateY(-1px);
+}
+
+.splash-footer {
+    position: absolute;
+    bottom: 25px;
+    font-size: 0.8rem;
+    color: #64748b;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+/* Animações Fluídas */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.4; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Responsividade Mobile e Tablets */
+@media (max-width: 768px) {
+    .splash-title {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+
+    .splash-subtitle {
+        font-size: 0.95rem;
+        padding: 0 15px;
+    }
+
+    .glow-orb {
+        width: 250px;
+        height: 250px;
+    }
+}

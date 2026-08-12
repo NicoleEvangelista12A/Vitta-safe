@@ -11,9 +11,8 @@ body {
 
 .cadastro-container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  /* Degradê tecnológico misturado com a imagem de fundo por URL */
   background: linear-gradient(
     135deg, 
     rgba(38, 41, 180, 0.85) 0%, 
@@ -49,7 +48,8 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
+  list-style: none;
 }
 
 .nav-links a {
@@ -195,4 +195,90 @@ form input:focus {
 
 .login-link a:hover {
   text-decoration: underline;
+}
+
+/* =========================================
+   AJUSTES RESPONSIVOS MULTI-DISPOSITIVOS
+   ========================================= */
+
+/* Tablets (Telas até 1024px - ex: iPad, Tablets em paisagem) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 20px 4%;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .form-card {
+    max-width: 480px;
+    padding: 35px 30px;
+  }
+}
+
+/* Tablets em retrato / Notebooks menores (Telas até 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .form-card {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+
+  .form-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .cadastro-container {
+    background-attachment: scroll; 
+  }
+}
+
+/* Celulares (Telas até 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 15px 10px;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .btn-cadastrar {
+    padding: 6px 12px;
+  }
+
+  .form-card {
+    max-width: 95%;
+    padding: 25px 15px;
+    border-radius: 8px;
+  }
+
+  .form-header h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
 }
