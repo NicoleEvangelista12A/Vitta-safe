@@ -107,6 +107,31 @@ body, html {
     animation: slideUp 1s ease-out;
 }
 
+/* Estilo atualizado do Badge com a Logo */
+.badge-tech {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px 16px 6px 8px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    backdrop-filter: blur(8px);
+    margin-bottom: 5px;
+}
+
+/* Estilo da imagem da logo em miniatura */
+.badge-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
 .btn-enter {
     position: relative;
     display: inline-block;

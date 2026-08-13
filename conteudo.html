@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitta Safe - Guia Avançado de Utilização</title>
+    <title>Vitta Safe - Visão Geral do Projeto</title>
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="conteudo.css">
-    <link rel="stylesheet" href="guia.css">
 </head>
 <body>
 
@@ -18,8 +18,12 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="conteudo.html">O Projeto</a></li>
-                <li><a href="guia.html" class="active">Guia</a></li>
+                <li><a href="conteudo.html" class="active">O Projeto</a></li>
+                <a href="guia.html">Guia</a>
+                <a href="custo.html">Custo</a>
+                <a href="jogo.html">Jogo</a>
+                <a href="nos.html">Sobre nós</a>
+                <a href="ref.html">ref</a>
                 <li><a href="login.html" class="btn-sair">Sair</a></li>
             </ul>
         </nav>
@@ -28,119 +32,76 @@
     <!-- Conteúdo Principal -->
     <main class="page-container">
         
-        <!-- Hero Section do Guia -->
+        <!-- Hero Section Interna -->
         <section class="hero-section">
             <div class="badge-tag">
                 <span class="pulse-dot"></span>
-                <span>Manual Técnico & Operacional</span>
+                <span>Inovação & Saúde Preventiva</span>
             </div>
-            <h1>Vitta Safe <br>Vida Conectada.</h1>
+            <h1>A segurança que você veste. <br>A vida que você protege.</h1>
             <p class="hero-desc">
-                Guia de Utilização Avançado: Domine a configuração, os protocolos de segurança preventiva e a sincronização em tempo real do seu dispositivo.
+                A revolução em forma de pulseira: monitoramento inteligente que prevê riscos e salva vidas antes mesmo do primeiro sintoma de crises ou desmaios súbitos.
             </p>
         </section>
 
-        <!-- Bloco de Passo a Passo Centralizado -->
-        <section class="glass-card guide-block-full">
-            <div class="guide-text-full">
-                <h2>Configuração Inicial</h2>
-                <p class="guide-subtitle">Siga o procedimento padrão para ativar o ecossistema de proteção autônoma:</p>
-                
-                <ul class="steps-grid">
-                    <li>
-                        <span class="step-number">1</span>
-                        <div>
-                            <strong>Ajuste Ergonômico:</strong> Prenda a pulseira firmemente no pulso esquerdo ou direito para assegurar contato contínuo dos sensores ópticos com a pele.
-                        </div>
-                    </li>
-                    <li>
-                        <span class="step-number">2</span>
-                        <div>
-                            <strong>Sincronização BLE:</strong> Conecte o hardware ao aplicativo móvel via Bluetooth Low Energy e preencha o seu prontuário médico inicial.
-                        </div>
-                    </li>
-                    <li>
-                        <span class="step-number">3</span>
-                        <div>
-                            <strong>Rede de Emergência:</strong> Cadastre até três contatos de confiança e configure a integração prioritária com centrais de apoio.
-                        </div>
-                    </li>
-                    <li>
-                        <span class="step-number">4</span>
-                        <div>
-                            <strong>Ativação Autônoma:</strong> O algoritmo preditivo entra em modo de varredura contínua, monitorando batimentos e oxigenação sem interrupções.
-                        </div>
-                    </li>
+        <!-- Bloco de Destaque com Imagem Principal -->
+        <section class="content-block glass-card">
+            <div class="text-side">
+                <h2>Guardião Pessoal 24h</h2>
+                <p>
+                    Em emergências médicas silenciosas, como crises decorrentes da <strong>Síndrome Vasovagal</strong>, cada segundo de atraso pode ser fatal. A reatividade mata; a proatividade salva.
+                </p>
+                <p>
+                    O Vitta Safe integra sensores de alta precisão no pulso para monitorar sinais vitais em tempo real, oferecendo segurança absoluta para quem vive sozinho ou possui condições de risco.
+                </p>
+            </div>
+            <div class="image-side">
+                <div class="mockup-box">
+                    <span>Pulseira Vitta Safe - Visor Ativo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Hardware e Tecnologia -->
+        <section class="content-block reverse glass-card">
+            <div class="image-side">
+                <div class="mockup-box">
+                    <span>Esquema Interno & Sensores</span>
+                </div>
+            </div>
+            <div class="text-side">
+                <h2>Tecnologia Preditiva</h2>
+                <p>Diferente de relógios comuns, o Vitta Safe te avisa antes de você perder a consciência:</p>
+                <ul class="tech-list">
+                    <li>Análise avançada de queda brusca de pressão e oxigenação.</li>
+                    <li>Alerta vibratório imediato no pulso ao detectar oscilações de risco.</li>
+                    <li>Instruções de segurança e rotas de socorro exibidas na tela.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Seção de Recursos Adicionais Profissionais -->
-        <section class="features-grid-pro">
-            <div class="pro-card">
-                <div class="pro-icon">⚡</div>
-                <h3>Autonomia Energética</h3>
-                <p>Bateria de íon-lítio de alta densidade otimizada para durar até 5 dias contínuos com recarga rápida via base magnética indutiva (0 a 100% em 45 minutos).</p>
-            </div>
-            <div class="pro-card">
-                <div class="pro-icon">🛡️</div>
-                <h3>Resistência Avançada</h3>
-                <p>Certificação IP67 contra imersão acidental em água, respingos e suor intenso, garantindo durabilidade durante atividades físicas e rotina diária.</p>
-            </div>
-            <div class="pro-card">
-                <div class="pro-icon">📡</div>
-                <h3>Conexão Híbrida</h3>
-                <p>Sincronização redundante com smartphones e roteadores Wi-Fi locais para disparar alertas automáticos mesmo se o celular estiver distante.</p>
-            </div>
-        </section>
-
-        <!-- Carrossel Tecnológico Embaixo -->
-        <section class="carousel-section">
-            <h3 class="carousel-title">Galeria de Interfaces e Telas do Sistema</h3>
+        <!-- Grid de Diferenciais e Público-Alvo -->
+        <section class="grid-section">
             
-            <div class="carousel-container">
-                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-                
-                <div class="carousel-track-wrapper">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide">
-                            <div class="mockup-box">
-                                <strong>Dashboard de Batimentos</strong>
-                                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Leitura óptica em tempo real de BPM e oxigenação sanguínea.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="mockup-box">
-                                <strong>Alerta de Pré-Crise (Vasovagal)</strong>
-                                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Vibração tátil no pulso e instruções de respiro na tela.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <div class="mockup-box">
-                                <strong>Painel de Contatos de Emergência</strong>
-                                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Envio automático de coordenadas GPS e status vital aos familiares.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            <div class="grid-card">
+                <h3>O Nosso Diferencial</h3>
+                <p>
+                    Não somos apenas um relógio que mostra números. Somos um sistema de segurança autônomo que fecha o ciclo de cuidado desde o primeiro sinal pré-crise até a chegada do resgate.
+                </p>
             </div>
 
-            <!-- Indicadores (Bolinhhas) -->
-            <div class="carousel-indicators">
-                <span class="indicator active" onclick="currentSlide(0)"></span>
-                <span class="indicator" onclick="currentSlide(1)"></span>
-                <span class="indicator" onclick="currentSlide(2)"></span>
+            <div class="grid-card">
+                <h3>Público-Alvo</h3>
+                <p style="margin-bottom: 12px; font-size: 0.9rem; color: #38bdf8;">Design minimalista que não estigmatiza o usuário:</p>
+                <ul class="target-list">
+                    <li>Pessoas com Síndrome Vasovagal e propensão a desmaios.</li>
+                    <li>Pacientes com condições crônicas ou pós-cirúrgicos.</li>
+                    <li>Pessoas que moram sozinhas e buscam tranquilidade.</li>
+                    <li>Idosos que valorizam a independência assistida.</li>
+                </ul>
             </div>
+
         </section>
-
-        <!-- Navegação de Retorno -->
-        <div class="back-navigation">
-            <a href="conteudo.html" class="btn-back">
-                <span>&#8592; Voltar ao Projeto Principal</span>
-            </a>
-        </div>
 
     </main>
 
@@ -148,42 +109,6 @@
     <footer class="site-footer">
         <p>&copy; 2026 Inovax Techmind. Todos os direitos reservados.</p>
     </footer>
-
-    <!-- Script do Carrossel -->
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.indicator');
-
-        function showSlide(index) {
-            if (index >= slides.length) slideIndex = 0;
-            if (index < 0) slideIndex = slides.length - 1;
-
-            slides.forEach((slide) => {
-                slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-            });
-
-            indicators.forEach((ind, i) => {
-                ind.classList.toggle('active', i === slideIndex);
-            });
-        }
-
-        function moveSlide(direction) {
-            slideIndex += direction;
-            showSlide(slideIndex);
-        }
-
-        function currentSlide(index) {
-            slideIndex = index;
-            showSlide(slideIndex);
-        }
-
-        // Auto-play do carrossel a cada 5 segundos para dar um toque ultra profissional
-        setInterval(() => {
-            slideIndex++;
-            showSlide(slideIndex);
-        }, 5000);
-    </script>
 
 </body>
 </html>
