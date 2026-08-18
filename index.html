@@ -3,56 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inovax techmind - Vitta safe </title>
+  <title>Inovax Techmind - Vitta Safe</title>
   
-  <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Arquivo de estilo CSS separado -->
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="hero-container">
     
-    <!-- Cabeçalho / Navegação -->
     <header class="navbar">
-      <div class="logo">Inovax Techmind</div>
+      <div class="logo">Vitta Safe</div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav>
-        <ul class="nav-links">
-          <a href="login.html" class="btn-cadastrar">login</a>
-          <a href="cadastro.html" class="btn-cadastrar">cadastrar</a>
-          <a href="conteudo.html" class="btn-conteudo"></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="login.html" class="nav-item active">login</a></li>
+          <li><a href="cadastro.html" class="nav-btn highlight">Cadastrar</a></li>
         </ul>
       </nav>
     </header>
      
-    <!-- Conteúdo Principal -->
     <main class="hero-content">
-      <div class="sub-tag">
-        <div class="tag-icon">
-          <span></span>
-          <span></span>
-          <span></span>
+      <div class="hero-left">
+        <div class="sub-tag">
+          <span class="icon-arrow">↗</span>
+          <span>PREVENÇÃO INTELIGENTE. MONITORAMENTO CONTÍNUO PARA SÍNDROME VASOVAGAL E RISCOS.</span>
         </div>
-        <span>Monitoramento inteligente, resposta imediata em situações de risco</span>
+
+        <h1 class="hero-title">VITTA SAFE</h1>
+
+        <p class="hero-description">
+          Monitoramento inteligente, resposta imediata em situações de risco. Detecta oscilações bruscas e previne complicações por desmaios automaticamente.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="abertura.html" class="btn-primary">
+            <span>EXPLORAR SISTEMA</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
       </div>
 
-      <h1 class="hero-title">SINTA-SE SEGURO</h1>
+      <div class="hero-cards-grid">
+        <div class="info-card">
+          <div class="card-image-box">
+            <div class="card-icon-placeholder">🌍</div>
+          </div>
+          <div class="card-text">
+            <h3>IMPACTO CLÍNICO</h3>
+            <p>Foco na Síndrome Vasovagal e desmaios súbitos. Proteção e autonomia ao alcance do pulso.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </div>
 
-      <p class="hero-description">
-        Prevenção ao alcance do pulso. Nosso sistema monitora oscilações cardíacas bruscas e previne complicações por desmaios. Se algo estiver fora do normal, o dispositivo checa seu estado e notifica seus contatos de emergência automaticamente.
-      </p>
+        <div class="info-card">
+          <div class="card-image-box active-glow">
+            <div class="card-icon-placeholder">⚙️</div>
+          </div>
+          <div class="card-text">
+            <h3>HARDWARE INTELIGENTE</h3>
+            <p>Algoritmos dedicados com ESP32 e sensores de batimentos para alta precisão na detecção.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </div>
 
-    <a href="abertura.html" class="btn-primary">
-      <span class="arrow-icon">inicio ►</span>
-    </a>
-      
+        <div class="info-card">
+          <div class="card-image-box">
+            <div class="card-icon-placeholder">🛡️</div>
+          </div>
+          <div class="card-text">
+            <h3>RESPOSTA AUTOMÁTICA</h3>
+            <p>Checagem de estado em tempo real e notificação imediata para contatos de emergência.</p>
+          </div>
+          <span class="card-arrow">↗</span>
+        </div>
+      </div>
     </main>
 
   </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
