@@ -341,3 +341,13 @@ body {
     justify-content: center;
   }
 }
+.btn-primary {
+  background: #ffffff;
+  color: #07090e;
+  box-shadow: none; /* Removido o brilho/sombra branca */
+}
+
+.btn-primary:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}

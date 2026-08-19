@@ -88,7 +88,7 @@ body, html {
     letter-spacing: 4px;
     margin-bottom: 15px;
     color: #ffffff;
-    text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+    text-shadow: none; /* Removido o brilho do título */
     animation: scaleUp 1s ease-out;
 }
 
@@ -144,13 +144,13 @@ body, html {
     text-decoration: none;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: none; /* Removido o brilho do botão */
 }
 
 .btn-enter:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+    box-shadow: none; /* Mantido sem brilho no hover */
     background: #f8fafc;
 }
 
