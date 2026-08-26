@@ -46,6 +46,9 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -63,18 +66,20 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #ffffff;
+    color: #38bdf8;
 }
 
 .btn-sair {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 16px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    border-radius: 20px;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s !important;
 }
 
 .btn-sair:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Container Principal */
@@ -175,29 +180,33 @@ body {
     gap: 15px;
 }
 
+/* Caixa de Link individual com transição automática ao passar o mouse */
 .link-item-box {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 10px;
     padding: 16px 20px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Disparado imediatamente assim que o mouse passa por cima */
 .link-item-box:hover {
-    background: rgba(56, 189, 248, 0.05);
-    border-color: rgba(56, 189, 248, 0.4);
-    transform: translateX(4px);
+    background: rgba(56, 189, 248, 0.08);
+    border-color: rgba(56, 189, 248, 0.5);
+    transform: translateX(8px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
 }
 
 .link-item-box a {
     color: #cbd5e1;
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 0.95rem;
     word-break: break-all;
     transition: color 0.2s;
+    display: block;
 }
 
-.link-item-box a:hover {
+.link-item-box:hover a {
     color: #38bdf8;
 }
 
@@ -254,9 +263,21 @@ body {
 
     .navbar {
         padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .glass-card {
         padding: 20px;
+    }
+
+    .link-item-box:hover {
+        transform: translateY(-3px);
     }
 }

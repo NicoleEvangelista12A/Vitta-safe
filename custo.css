@@ -34,7 +34,7 @@ body {
     align-items: center;
     padding: 20px 6%;
     width: 100%;
-    background: rgba(13, 11, 30, 0.75);
+    background: rgba(13, 11, 30, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: sticky;
@@ -46,6 +46,9 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -56,25 +59,28 @@ body {
 }
 
 .nav-links a {
-    color: #a0a0b0;
+    color: #94a3b8;
     text-decoration: none;
     font-size: 0.9rem;
+    font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #ffffff;
+    color: #38bdf8;
 }
 
 .btn-sair {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 6px 16px;
-    border-radius: 4px;
-    transition: background 0.2s;
+    border-radius: 20px;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s !important;
 }
 
 .btn-sair:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Container Principal */
@@ -133,7 +139,6 @@ body {
     line-height: 1.2;
     letter-spacing: 1px;
     color: #ffffff;
-    text-shadow: 0 2px 15px rgba(56, 189, 248, 0.3);
 }
 
 .hero-desc {
@@ -144,10 +149,10 @@ body {
 
 /* Card de Vidro (Glassmorphism) para Custos */
 .glass-card {
-    background: rgba(20, 16, 35, 0.65);
+    background: rgba(18, 16, 38, 0.6);
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 40px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -178,11 +183,12 @@ body {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    white-space: nowrap;
 }
 
 .cost-table th {
     font-family: 'Cinzel', serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #38bdf8;
     padding: 14px 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -245,10 +251,10 @@ body {
 }
 
 .showcase-card {
-    background: rgba(20, 16, 35, 0.65);
+    background: rgba(18, 16, 38, 0.6);
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 25px;
     display: flex;
     justify-content: center;
@@ -319,21 +325,34 @@ body {
 
 /* Responsividade Mobile */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.1rem;
+    }
+
     .total-investment-box {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
-    
-    .hero-section h1 {
-        font-size: 2.1rem;
-    }
-
-    .navbar {
-        padding: 15px 20px;
-    }
 
     .glass-card {
         padding: 20px;
+    }
+
+    .page-container {
+        padding: 0 15px;
+        margin: 20px auto;
     }
 }
