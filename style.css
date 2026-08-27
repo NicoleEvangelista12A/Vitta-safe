@@ -23,7 +23,7 @@ body {
   
   background: 
     radial-gradient(circle at 75% 35%, rgba(120, 50, 180, 0.35) 0%, rgba(25, 60, 110, 0.25) 40%, rgba(7, 9, 14, 0.95) 80%),
-    url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=1200&q=80');
+    url('https://t4.ftcdn.net/jpg/01/94/68/65/360_F_194686589_7buCG2Gh3xWodYKlncTlYQtugRr43ZL1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,13 +45,13 @@ body {
 }
 
 .logo {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #fff, #a288ef);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -98,7 +98,7 @@ body {
   opacity: 0.9;
 }
 
-.menu-toggle {
+.menu {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -110,7 +110,7 @@ body {
   z-index: 101;
 }
 
-.menu-toggle span {
+.menu span {
   width: 100%;
   height: 2px;
   background-color: #ffffff;
@@ -155,19 +155,20 @@ body {
 }
 
 .hero-title {
-  font-family: 'Cinzel', serif;
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff 30%, #a855f7 70%, #06b6d4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
 }
+
 
 .hero-description {
   font-size: 0.95rem;
@@ -288,7 +289,7 @@ body {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
 }
-
+/*responsividade*/
 @media (max-width: 900px) {
   .hero-container {
     padding: 1.5rem 1rem;
@@ -344,10 +345,77 @@ body {
 .btn-primary {
   background: #ffffff;
   color: #07090e;
-  box-shadow: none; /* Removido o brilho/sombra branca */
+  box-shadow: none; 
 }
 
 .btn-primary:hover {
   background: #f1f5f9;
   transform: translateY(-2px);
+}
+
+/*modo claro*/
+/* Quando a classe light-mode estiver ativa no body, inverta as cores principais */
+body.light-mode {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    background-image: none !important; /* Remove o fundo de imagem escuro se quiser um fundo limpo */
+}
+
+/* Ajusta a barra de navegação no modo claro */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .logo {
+    color: #0f172a !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+body.light-mode .nav-links a {
+    color: #475569 !important;
+}
+
+body.light-mode .nav-links a:hover, 
+body.light-mode .nav-links a.active {
+    color: #0284c7 !important;
+}
+
+/* Ajusta os cards de vidro (team-card) para o modo claro */
+body.light-mode .glass-card.team-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .member-info h2 {
+    color: #0f172a !important;
+}
+
+body.light-mode .member-info p {
+    color: #334155 !important;
+}
+
+body.light-mode .member-info p strong {
+    color: #0284c7 !important;
+}
+
+body.light-mode .hero-section h1 {
+    color: #0f172a !important;
+}
+
+body.light-mode .hero-desc {
+    color: #475569 !important;
+}
+
+body.light-mode .badge-tag {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #334155;
+}
+
+body.light-mode .btn-back {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #0f172a;
 }

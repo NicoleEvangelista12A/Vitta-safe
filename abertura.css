@@ -35,7 +35,6 @@ body, html {
     animation: fadeIn 1.2s ease-out;
 }
 
-/* Orbe de luz brilhante de fundo com animação */
 .glow-orb {
     position: absolute;
     width: 350px;
@@ -55,7 +54,6 @@ body, html {
     align-items: center;
 }
 
-/* Badge superior */
 .badge-tech {
     display: flex;
     align-items: center;
@@ -80,7 +78,6 @@ body, html {
     animation: blink 1.5s infinite;
 }
 
-/* Título de Impacto */
 .splash-title {
     font-family: 'Cinzel', serif;
     font-size: 4rem;
@@ -88,7 +85,7 @@ body, html {
     letter-spacing: 4px;
     margin-bottom: 15px;
     color: #ffffff;
-    text-shadow: none; /* Removido o brilho do título */
+    text-shadow: none; 
     animation: scaleUp 1s ease-out;
 }
 
@@ -101,13 +98,12 @@ body, html {
     animation: fadeIn 1.5s ease-out;
 }
 
-/* Botão Tecnológico com Efeito */
 .action-box {
     position: relative;
     animation: slideUp 1s ease-out;
 }
 
-/* Estilo atualizado do Badge com a Logo */
+
 .badge-tech {
     display: inline-flex;
     align-items: center;
@@ -122,7 +118,7 @@ body, html {
     margin-bottom: 5px;
 }
 
-/* Estilo da imagem da logo em miniatura */
+
 .badge-logo {
     width: 24px;
     height: 24px;
@@ -167,7 +163,7 @@ body, html {
     z-index: 2;
 }
 
-/* Animações Fluídas */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -198,7 +194,7 @@ body, html {
     50% { opacity: 0.3; }
 }
 
-/* Responsividade Mobile e Tablets */
+/* Responsividade*/
 @media (max-width: 768px) {
     .splash-title {
         font-size: 2.8rem;

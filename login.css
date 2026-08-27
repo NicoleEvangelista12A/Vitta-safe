@@ -45,22 +45,21 @@ body {
   letter-spacing: 0.5px;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  list-style: none;
-}
-
-.nav-links a {
+.login-link {
+  margin-top: 20px;
+  font-size: 0.85rem;
   color: #a0a0b0;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  text-align: center;
 }
 
-.nav-links a:hover {
+.login-link a {
   color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }
 
 .btn-cadastrar {
@@ -197,11 +196,7 @@ form input:focus {
   text-decoration: underline;
 }
 
-/* =========================================
-   AJUSTES RESPONSIVOS MULTI-DISPOSITIVOS
-   ========================================= */
-
-/* Tablets (Telas até 1024px - ex: iPad, Tablets em paisagem) */
+/*responsividade*/
 @media (max-width: 1024px) {
   .navbar {
     padding: 20px 4%;
@@ -217,7 +212,6 @@ form input:focus {
   }
 }
 
-/* Tablets em retrato / Notebooks menores (Telas até 768px) */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -246,7 +240,6 @@ form input:focus {
   }
 }
 
-/* Celulares (Telas até 480px) */
 @media (max-width: 480px) {
   .navbar {
     padding: 15px 10px;

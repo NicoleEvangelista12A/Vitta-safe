@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- Navbar Fixa -->
     <header class="navbar">
         <div class="logo">Inovax Techmind</div>
         <nav>
@@ -24,15 +23,12 @@
                 <a href="jogo.html">Jogo</a>
                 <a href="nos.html">Sobre nós</a>
                 <a href="ref.html">ref</a>
-                <li><a href="login.html" class="btn-sair">Sair</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main class="page-container">
         
-        <!-- Hero Section do Guia -->
         <section class="hero-section">
             <div class="badge-tag">
                 <span class="pulse-dot"></span>
@@ -44,7 +40,6 @@
             </p>
         </section>
 
-        <!-- Bloco de Passo a Passo Centralizado -->
         <section class="glass-card guide-block-full">
             <div class="guide-text-full">
                 <h2>Passo a Passo</h2>
@@ -79,7 +74,6 @@
             </div>
         </section>
 
-        <!-- Carrossel Tecnológico Embaixo -->
         <section class="carousel-section">
             <h3 class="carousel-title">Galeria & Demonstração do Dispositivo</h3>
             
@@ -103,7 +97,6 @@
                 <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
             </div>
 
-            <!-- Indicadores (Bolinhhas) -->
             <div class="carousel-indicators">
                 <span class="indicator active" onclick="currentSlide(0)"></span>
                 <span class="indicator" onclick="currentSlide(1)"></span>
@@ -111,7 +104,6 @@
             </div>
         </section>
 
-        <!-- Navegação de Retorno -->
         <div class="back-navigation">
             <a href="conteudo.html" class="btn-back">
                 <span>&#8592; Voltar ao Projeto</span>
@@ -120,12 +112,10 @@
 
     </main>
 
-    <!-- Rodapé -->
     <footer class="site-footer">
         <p>&copy; 2026 Inovax Techmind. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script do Carrossel -->
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');

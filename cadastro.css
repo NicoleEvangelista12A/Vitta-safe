@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0d0b1e;
   color: #ffffff;
 }
 
@@ -14,7 +13,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  /* Mistura o degradê escuro por cima da imagem da URL */
   background: linear-gradient(
     135deg, 
     rgba(38, 41, 180, 0.85) 0%, 
@@ -47,22 +45,25 @@ body {
   letter-spacing: 0.5px;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
-}
-
-.nav-links a {
+.login-link {
+  margin-top: 20px;
+  font-size: 0.85rem;
   color: #a0a0b0;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  text-align: center;
 }
 
-.nav-links a:hover {
+.login-link a {
   color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }
 
 .btn-cadastrar {
@@ -182,7 +183,6 @@ form input:focus {
   transform: translateY(-1px);
 }
 
-.login-login,
 .login-link {
   margin-top: 20px;
   font-size: 0.85rem;
@@ -200,43 +200,14 @@ form input:focus {
   text-decoration: underline;
 }
 
-
-.badge-tech {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 6px 16px 6px 8px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    color: #cbd5e1;
-    backdrop-filter: blur(8px);
-    margin-bottom: 5px;
-}
-
-/* Estilo da imagem da logo em miniatura */
-.badge-logo {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid rgba(56, 189, 248, 0.5);
-    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
-}
-
-/* =========================================
-   RESPONSIVIDADE MULTI-DISPOSITIVOS
-   ========================================= */
-
-/* Tablets (Telas até 1024px) */
+/* Responsividade */
 @media (max-width: 1024px) {
   .navbar {
     padding: 20px 4%;
   }
   
   .nav-links {
-    gap: 20px;
+    gap: 15px;
   }
   
   .form-card {
@@ -245,12 +216,12 @@ form input:focus {
   }
 }
 
-/* Tablets em retrato / Notebooks menores (Telas até 768px) */
+/* Tablets em retrato*/
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    padding: 20px 20px;
     text-align: center;
   }
 
@@ -266,11 +237,11 @@ form input:focus {
   }
 
   .form-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .cadastro-container {
-    background-attachment: scroll; /* Melhora a performance em dispositivos móveis */
+    background-attachment: scroll; 
   }
 }
 
@@ -295,10 +266,11 @@ form input:focus {
   .form-card {
     max-width: 95%;
     padding: 25px 15px;
+    border-radius: 8px;
   }
 
   .form-header h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     letter-spacing: 1px;
   }
 

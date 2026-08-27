@@ -1,5 +1,5 @@
 /* ==========================================
-   RESET & ESTILOS GLOBAIS
+    RESET & ESTILOS GLOBAIS
    ========================================== */
 * {
     margin: 0;
@@ -12,19 +12,13 @@ body {
     background-color: #0d0b1e;
     color: #ffffff;
     overflow-x: hidden;
-    background-image: 
-        linear-gradient(
-            135deg, 
-            rgba(15, 12, 41, 0.92) 0%, 
-            rgba(38, 41, 180, 0.8) 50%, 
-            rgba(13, 11, 30, 0.92) 100%
-        ),
-        url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
+    background: 
+    radial-gradient(circle at 75% 35%, rgba(120, 50, 180, 0.35) 0%, rgba(25, 60, 110, 0.25) 40%, rgba(7, 9, 14, 0.95) 80%),
+    url('https://t4.ftcdn.net/jpg/01/94/68/65/360_F_194686589_7buCG2Gh3xWodYKlncTlYQtugRr43ZL1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    line-height: 1.6;
 }
 
 /* Navbar */
@@ -48,6 +42,7 @@ body {
     letter-spacing: 0.5px;
     font-family: 'Cinzel', serif;
     background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -126,12 +121,6 @@ body {
     animation: pulseAnim 1.5s infinite;
 }
 
-@keyframes pulseAnim {
-    0% { transform: scale(0.9); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.5; }
-    100% { transform: scale(0.9); opacity: 1; }
-}
-
 .hero-section h1 {
     font-family: 'Cinzel', serif;
     font-size: 2.8rem;
@@ -147,34 +136,27 @@ body {
     max-width: 650px;
 }
 
-/* Grid de Membros */
 .team-grid {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-/* Card de Vidro com ANIMAÇÃO AO PASSAR O MOUSE (HOVER) */
 .glass-card.team-card {
     background: rgba(18, 16, 38, 0.6);
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     gap: 30px;
-    /* ADICIONADO: Transição obrigatória para o hover funcionar fluidamente */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Disparado automaticamente assim que o mouse passa por cima */
 .glass-card.team-card:hover {
-    transform: translateX(12px) translateY(-4px); 
-    background: rgba(25, 21, 52, 0.85); 
-    border-color: rgba(56, 189, 248, 0.6); 
-    box-shadow: -8px 20px 40px rgba(56, 189, 248, 0.2); 
+  transform: scale(1.05); 
+    border-color: #38bdf8; 
 }
 
 .member-avatar {
@@ -183,17 +165,14 @@ body {
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid rgba(56, 189, 248, 0.4);
-    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
-    flex-shrink: 0;
     transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-/* Animação na foto ao passar o mouse */
 .glass-card.team-card:hover .member-avatar {
     transform: scale(1.08) rotate(2deg); 
     border-color: #38bdf8;
-    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
 }
 
 .member-info h2 {
@@ -203,7 +182,6 @@ body {
     transition: color 0.3s ease;
 }
 
-/* O nome muda para azul ao passar o mouse */
 .glass-card.team-card:hover .member-info h2 {
     color: #38bdf8;
 }
@@ -230,7 +208,6 @@ body {
     font-weight: 600;
 }
 
-/* Botão de Retorno */
 .back-navigation {
     display: flex;
     justify-content: flex-start;
@@ -258,7 +235,6 @@ body {
     transform: translateX(-3px);
 }
 
-/* Rodapé */
 .site-footer {
     text-align: center;
     padding: 30px 0;
@@ -268,7 +244,7 @@ body {
     margin-top: 20px;
 }
 
-/* Responsividade Mobile */
+/* Responsividade*/
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
@@ -289,7 +265,6 @@ body {
         gap: 20px;
     }
 
-    /* No celular, ajusta o movimento para não estourar a tela */
     .glass-card.team-card:hover {
         transform: translateY(-6px);
     }
