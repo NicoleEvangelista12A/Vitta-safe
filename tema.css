@@ -1,15 +1,258 @@
-:root {
-  --bg: #ffffff;
-  --text: #111111;
+body.light-mode {
+  background-color: #f4f4f9 !important;
+  color: #111111 !important;
 }
 
-body.dark-mode {
-  --bg: #121212;
-  --text: #f1f1f1;
+body.light-mode .hero-container {
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.88) 0%, 
+    rgba(230, 240, 255, 0.75) 100%
+  ), 
+  url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpW2xyITrgzlpArcii9ailyWbebgdlt3BI3MC3K8UCLNLnThXxAbL_aY&s=10') !important;
+  
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  transition: 0.3s;
+/* Barra de navegação e menu no modo claro */
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-mode .logo {
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  color: #111111 !important;
+}
+
+body.light-mode .nav-item {
+  color: #333333 !important;
+}
+
+body.light-mode .nav-item:hover, 
+body.light-mode .nav-item.active {
+  color: #000000 !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-mode .menu span {
+  background-color: #8ac2f7 !important;
+}
+
+body.light-mode .hero-title,
+body.light-mode .hero-description,
+body.light-mode .sub-tag,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode span {
+  color: #000000 !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+
+body.light-mode .hero-description {
+  color: #444444 !important;
+}
+
+body.light-mode .info-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(159, 204, 247, 0.15) !important;
+}
+
+body.light-mode .info-card:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 120, 255, 0.4) !important;
+}
+
+body.light-mode .card-image-box {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .card-text h3 {
+  color: #111111 !important;
+}
+
+body.light-mode .card-text p {
+  color: #555555 !important;
+}
+
+body.light-mode .btn-primary {
+  background: #7db0f3 !important;
+  color: #ffffff !important;
+}
+
+body.light-mode .btn-primary:hover {
+  background: #1e44ee !important;
+}
+
+body.light-mode .btn-secondary {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #111111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+body.light-mode .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+@media (max-width: 900px) {
+  body.light-mode .nav-links {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  }
+  body.light-mode .nav-links a {
+    color: #111111 !important;
+  }
+}
+
+body.light-mode {
+  background-color: #f4f4f9 !important;
+  color: #111111 !important;
+  background-image: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.88) 0%, 
+    rgba(230, 240, 255, 0.75) 100%
+  ), 
+  url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpW2xyITrgzlpArcii9ailyWbebgdlt3BI3MC3K8UCLNLnThXxAbL_aY&s=10') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-mode .logo {
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  color: #111111 !important;
+}
+
+body.light-mode .nav-links a {
+  color: #475569 !important;
+}
+
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+  color: #0284c7 !important;
+}
+
+body.light-mode .btn-sair {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #111111 !important;
+}
+
+body.light-mode .btn-sair:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+
+body.light-mode .hero-section h1 {
+  color: #111111 !important;
+}
+
+body.light-mode .hero-desc {
+  color: #475569 !important;
+}
+
+body.light-mode .badge-tag {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #334155 !important;
+}
+
+body.light-mode .pulse-dot {
+  background-color: #0284c7 !important;
+}
+
+body.light-mode .glass-card,
+body.light-mode .grid-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode .text-side h2,
+body.light-mode .grid-card h3 {
+  color: #111111 !important;
+}
+
+body.light-mode .text-side p,
+body.light-mode .grid-card p,
+body.light-mode .tech-list li,
+body.light-mode .target-list li {
+  color: #334155 !important;
+}
+
+body.light-mode .text-side p strong {
+  color: #0284c7 !important;
+}
+
+body.light-mode .tech-list li::before, 
+body.light-mode .target-list li::before {
+  color: #0284c7 !important;
+}
+
+
+body.light-mode .mockup-box {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+
+body.light-mode .site-footer {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #64748b !important;
+}
+#botao-tema, 
+.theme-toggle-btn {
+  position: fixed;
+  top: 2.9rem;
+  right: 2rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+#botao-tema:hover, 
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.light-mode #botao-tema, 
+body.light-mode .theme-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111111;
+}
+
+body.light-mode #botao-tema:hover, 
+body.light-mode .theme-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
 }

@@ -58,7 +58,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    color: #cbd5e1;
+    color: #000205;
     font-size: 0.95rem;
     line-height: 1.5;
     background: rgba(255, 255, 255, 0.02);
@@ -97,7 +97,7 @@ body {
 .carousel-title {
     font-family: 'Cinzel', serif;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #72b0f7;
     text-align: center;
 }
 
@@ -142,7 +142,7 @@ body {
 .carousel-btn {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    color: #69abf7;
     font-size: 1.2rem;
     width: 45px;
     height: 45px;
