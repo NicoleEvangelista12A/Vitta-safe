@@ -58,7 +58,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    color: #000205;
+    color: #000000;
     font-size: 0.95rem;
     line-height: 1.5;
     background: rgba(255, 255, 255, 0.02);
@@ -68,7 +68,7 @@ body {
 }
 
 .step-number {
-    background: rgba(56, 189, 248, 0.15);
+    background: rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(56, 189, 248, 0.3);
     color: #38bdf8;
     font-weight: 700;
@@ -83,7 +83,7 @@ body {
 }
 
 .steps-grid strong {
-    color: #ffffff;
+    color: #000000;
 }
 
 .carousel-section {

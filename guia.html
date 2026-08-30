@@ -21,10 +21,10 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="conteudo.html">O Projeto</a></li>
                 <li><a href="guia.html" class="active">Guia</a></li>
-                <a href="custo.html">Custo</a>
-                <a href="jogo.html">Jogo</a>
-                <a href="nos.html">Sobre nós</a>
-                <a href="ref.html">ref</a>
+                <li><a href="custo.html">Custo</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="nos.html">Sobre nós</a></li>
+                <li><a href="ref.html">ref</a></li>
             </ul>
         </nav>
     </header>
@@ -80,7 +80,7 @@
             <h3 class="carousel-title">Galeria & Demonstração do Dispositivo</h3>
             
             <div class="carousel-container">
-                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
                 
                 <div class="carousel-track-wrapper">
                     <div class="carousel-track" id="carouselTrack">
@@ -96,13 +96,13 @@
                     </div>
                 </div>
 
-                <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+                <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
             </div>
 
             <div class="carousel-indicators">
-                <span class="indicator active" onclick="currentSlide(0)"></span>
-                <span class="indicator" onclick="currentSlide(1)"></span>
-                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
             </div>
         </section>
 
@@ -113,13 +113,11 @@
         </div>
 
         <div class="menu-direito">
-  <button id="botao-tema">☀️</button>
-</div>
+            <button id="botao-tema">☀️</button>
+        </div>
 
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Inovax Techmind. Todos os direitos reservados.</p>
     </footer>
-</body>
-</html>

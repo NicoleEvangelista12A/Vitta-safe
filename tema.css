@@ -220,7 +220,7 @@ body.light-mode .site-footer {
 #botao-tema, 
 .theme-toggle-btn {
   position: fixed;
-  top: 2.9rem;
+  top: 4.6rem;
   right: 2rem;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.1);
@@ -255,4 +255,50 @@ body.light-mode .theme-toggle-btn {
 body.light-mode #botao-tema:hover, 
 body.light-mode .theme-toggle-btn:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  color: #ffffff;
+}
+
+body:not(.light-mode) p, 
+body:not(.light-mode) span:not(.step-number), 
+body:not(.light-mode) h1, 
+body:not(.light-mode) h2, 
+body:not(.light-mode) h3, 
+body:not(.light-mode) strong {
+  color: #ffffff;
+}
+
+body:not(.light-mode) .steps-grid li {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+body:not(.light-mode) .steps-grid strong {
+  color: #ffffff;
+}
+
+body.light-mode {
+  color: #1e293b;
+}
+
+body.light-mode p, 
+body.light-mode span:not(.step-number), 
+body.light-mode h1, 
+body.light-mode h2, 
+body.light-mode h3, 
+body.light-mode strong {
+  color: #1e293b;
+}
+
+body.light-mode .steps-grid li {
+  color: #1e293b;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .steps-grid strong {
+  color: #0f172a;
 }
