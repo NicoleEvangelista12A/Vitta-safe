@@ -8,8 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="tema.css">
+    <script type="module" src="./index.js"></script>
 </head>
 <body>
 
@@ -87,20 +88,12 @@
           <span class="card-arrow">↗</span>
         </div>
       </div>
+       <div class="menu-direito">
+  <button id="theme-toggle">☀️ / 🌙</button>
+</div>
     </main>
 
   </div>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-  </script>
   
-
 </body>
 </html>

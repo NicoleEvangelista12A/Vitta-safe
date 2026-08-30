@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="conteudo.css">
     <link rel="stylesheet" href="guia.css">
+     <link rel="stylesheet" href="tema.css">
+     <script type="module" src="./index.js"></script>
 </head>
 <body>
 
@@ -110,40 +112,14 @@
             </a>
         </div>
 
+         <div class="menu-direito">
+  <button id="theme-toggle">☀️ / 🌙</button>
+</div>
+
     </main>
 
     <footer class="site-footer">
         <p>&copy; 2026 Inovax Techmind. Todos os direitos reservados.</p>
     </footer>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.indicator');
-
-        function showSlide(index) {
-            if (index >= slides.length) slideIndex = 0;
-            if (index < 0) slideIndex = slides.length - 1;
-
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-            });
-
-            indicators.forEach((ind, i) => {
-                ind.classList.toggle('active', i === slideIndex);
-            });
-        }
-
-        function moveSlide(direction) {
-            slideIndex += direction;
-            showSlide(slideIndex);
-        }
-
-        function currentSlide(index) {
-            slideIndex = index;
-            showSlide(slideIndex);
-        }
-    </script>
-
 </body>
 </html>
