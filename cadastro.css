@@ -5,215 +5,390 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: #ffffff;
+  overflow-x: hidden;
+}
+
+body.light-mode .cadastro-container {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(238, 247, 255, 0.72) 0%,
+      rgba(225, 243, 255, 0.58) 38%,
+      rgba(218, 242, 247, 0.48) 72%,
+      rgba(236, 239, 255, 0.68) 100%
+    ),
+    url("https://png.pngtree.com/thumb_back/fh260/background/20210715/pngtree-business-geometric-technology-slide-hexagon-light-dot-light-blue-background-image_742356.jpg") !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+
+  color: #17365f !important;
 }
 
 .cadastro-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    rgba(38, 41, 180, 0.85) 0%,
-    rgba(21, 65, 92, 0.7) 40%,
-    rgba(60, 156, 168, 0.5) 75%,
-    rgba(38, 41, 180, 0.85) 100%
-  ),
-  url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
+  min-height: 100svh;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 29, 85, 0.82) 0%,
+      rgba(13, 75, 105, 0.62) 45%,
+      rgba(20, 105, 125, 0.48) 70%,
+      rgba(20, 35, 110, 0.78) 100%
+    ),
+    url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   display: flex;
   flex-direction: column;
+}
+
+.cadastro-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 20% 35%,
+      rgba(56, 189, 248, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 65%,
+      rgba(124, 58, 237, 0.18),
+      transparent 34%
+    );
+
+  z-index: 0;
+}
+
+.cadastro-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 6%;
-  width: 100%;
+
+  width: min(1180px, calc(100% - 32px));
+  min-height: 64px;
+
+  margin: 18px auto 0;
+  padding: 12px 18px;
+
+  border-radius: 18px;
+
+  background: rgba(13, 11, 30, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  backdrop-filter: blur(18px);
+
   z-index: 10;
 }
 
 .logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
   font-weight: 700;
-  font-size: 1.1rem;
   letter-spacing: 0.5px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 25%,
+    #38bdf8 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .btn-cadastrar {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 18px;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #06b6d4
+  );
+
+  box-shadow:
+    0 8px 22px rgba(6, 182, 212, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-cadastrar:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(6, 182, 212, 0.25);
 }
 
 .main-content {
   flex: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+
+  padding: 45px 20px 55px;
+
   z-index: 5;
 }
 
 .form-card {
-  background: rgba(20, 16, 35, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 40px;
   width: 100%;
-  max-width: 550px;
+  max-width: 560px;
+
+  padding: 42px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+  background: rgba(13, 17, 35, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(56, 189, 248, 0.06);
 }
 
 .form-header {
+  width: 100%;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .subtitle {
-  font-size: 0.75rem;
-  color: #8b85a0;
-  letter-spacing: 1.5px;
+  display: block;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  color: #8ccff2;
+
+  letter-spacing: 2px;
   text-transform: uppercase;
+
+  margin-bottom: 8px;
 }
 
 .form-header h1 {
-  font-family: 'Times New Roman', serif;
-  font-size: 2.2rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  margin-top: 5px;
+  font-family: 'Cinzel', serif;
+
+  font-size: 2.35rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: 1px;
+
   color: #ffffff;
+
+  text-shadow:
+    0 4px 20px rgba(56, 189, 248, 0.12);
 }
 
 form {
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 15px;
+
+  gap: 14px;
 }
 
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
   width: 100%;
-  padding: 14px 18px;
-  background: rgba(25, 20, 45, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 6px;
+
+  padding: 15px 17px;
+
+  background: rgba(7, 13, 28, 0.65);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 11px;
+
   color: #ffffff;
-  font-size: 0.95rem;
+
+  font-size: 0.94rem;
+
   outline: none;
-  transition: border-color 0.2s;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 form input::placeholder {
-  color: #6c6580;
+  color: #91a0b5;
 }
 
 form input:focus {
-  border-color: #8b5cf6;
+  background: rgba(8, 18, 38, 0.82);
+
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 0 3px rgba(56, 189, 248, 0.10);
 }
 
 .terms {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 5px 0 15px 0;
-  font-size: 0.85rem;
-  color: #a0a0b0;
+  gap: 9px;
+
+  margin: 5px 0 12px;
+
+  font-size: 0.82rem;
+  line-height: 1.5;
+
+  color: #aebdce;
 }
 
 .terms input {
-  accent-color: #8b5cf6;
+  width: 15px;
+  height: 15px;
+
+  accent-color: #38bdf8;
+
   cursor: pointer;
 }
 
 .terms a {
-  color: #ffffff;
+  color: #38bdf8;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.terms a:hover {
   text-decoration: underline;
 }
 
 .submit-btn {
   width: 100%;
-  padding: 14px;
-  background: #ffffff;
-  color: #0d0b1e;
+
+  padding: 15px;
+
   border: none;
-  border-radius: 6px;
-  font-weight: 700;
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #3189e9
+  );
+
+  color: #ffffff;
+
   font-size: 0.9rem;
+  font-weight: 700;
+
   letter-spacing: 1px;
+
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+
+  box-shadow:
+    0 10px 28px rgba(49, 137, 233, 0.20);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .submit-btn:hover {
-  background: #f0f0f5;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 14px 32px rgba(49, 137, 233, 0.28);
 }
 
 .login-link {
-  margin-top: 20px;
+  margin-top: 22px;
+
   font-size: 0.85rem;
-  color: #a0a0b0;
+
+  color: #9eacbd;
+
   text-align: center;
 }
 
 .login-link a {
-  color: #ffffff;
+  color: #38bdf8;
+
   text-decoration: none;
-  font-weight: 600;
+
+  font-weight: 700;
 }
 
 .login-link a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 20px 4%;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .form-card {
-    max-width: 480px;
-    padding: 35px 30px;
-  }
-}
-
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    text-align: center;
+    width: calc(100% - 24px);
+
+    margin-top: 12px;
+
+    padding: 11px 14px;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+  .main-content {
+    padding: 35px 16px 45px;
   }
 
   .form-card {
-    max-width: 90%;
-    padding: 30px 20px;
+    max-width: 520px;
+
+    padding: 34px 26px;
+
+    border-radius: 20px;
   }
 
   .form-header h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .cadastro-container {
@@ -223,36 +398,48 @@ form input:focus {
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 15px 10px;
+    width: calc(100% - 20px);
   }
 
-  .nav-links {
-    gap: 8px;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
+  .logo {
+    font-size: 1rem;
   }
 
   .btn-cadastrar {
-    padding: 6px 12px;
+    padding: 8px 13px;
+    font-size: 0.8rem;
+  }
+
+  .main-content {
+    padding: 25px 12px 35px;
   }
 
   .form-card {
-    max-width: 95%;
-    padding: 25px 15px;
-    border-radius: 8px;
+    padding: 28px 18px;
+
+    border-radius: 18px;
+  }
+
+  .form-header {
+    margin-bottom: 22px;
   }
 
   .form-header h1 {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
+    font-size: 1.65rem;
+  }
+
+  .subtitle {
+    font-size: 0.68rem;
   }
 
   form input[type="text"],
   form input[type="email"],
   form input[type="password"] {
-    padding: 12px 14px;
-    font-size: 0.9rem;
+    padding: 13px 14px;
+  }
+
+  .terms {
+    align-items: flex-start;
+    font-size: 0.78rem;
   }
 }

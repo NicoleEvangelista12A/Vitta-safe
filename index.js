@@ -1,15 +1,13 @@
 let currentSlide = 0;
 
 function updateThemeButton(button) {
-
   if (!button) {
     return;
   }
 
-  const isLight =
-    document.body.classList.contains('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
 
-  button.textContent = isLight ? '☀️' : '🌙';
+  button.textContent = isLight ? '🌙' : '☀️';
 
   button.setAttribute(
     'aria-label',
@@ -26,11 +24,9 @@ function updateThemeButton(button) {
   );
 }
 
-
 function setupTheme() {
+  let button = document.getElementById('botao-tema');
 
-  let button =
-    document.getElementById('botao-tema');
   if (!button) {
     button = document.createElement('button');
     button.id = 'botao-tema';
@@ -38,8 +34,8 @@ function setupTheme() {
     document.body.appendChild(button);
   }
 
-  const savedTheme =
-    localStorage.getItem('tema');
+  const savedTheme = localStorage.getItem('tema');
+
   if (savedTheme === 'light') {
     document.body.classList.add('light-mode');
   } else {
@@ -51,55 +47,52 @@ function setupTheme() {
   if (button.dataset.themeReady) {
     return;
   }
+
   button.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
+
     const theme =
       document.body.classList.contains('light-mode')
         ? 'light'
         : 'dark';
-    localStorage.setItem(
-      'tema',
-      theme
-    );
+
+    localStorage.setItem('tema', theme);
 
     updateThemeButton(button);
-
   });
+
   button.dataset.themeReady = 'true';
 }
 
 function setupMobileMenu() {
-  const navbar =
-    document.querySelector('.navbar');
+  const navbar = document.querySelector('.navbar');
+
   if (!navbar) {
     return;
   }
 
-  const nav =
-    navbar.querySelector('nav');
-  const links =
-    navbar.querySelector('.nav-links');
+  const nav = navbar.querySelector('nav');
+  const links = navbar.querySelector('.nav-links');
+
   if (!nav || !links) {
     return;
   }
 
-  let button =
-    navbar.querySelector(
-      '.mobile-menu-button, .menu'
-    );
+  let button = navbar.querySelector(
+    '.mobile-menu-button, .menu'
+  );
 
   if (!button) {
-    button =
-      document.createElement('button');
-    button.className =
-      'mobile-menu-button';
+    button = document.createElement('button');
+
+    button.className = 'mobile-menu-button';
+
     button.type = 'button';
+
     button.innerHTML =
       '<span></span><span></span><span></span>';
-    navbar.insertBefore(
-      button,
-      nav
-    );
+
+    navbar.insertBefore(button, nav);
   }
 
   button.setAttribute(
@@ -107,284 +100,261 @@ function setupMobileMenu() {
     'false'
   );
 
+  button.setAttribute(
+    'aria-label',
+    'Abrir menu'
+  );
+
   if (button.dataset.menuReady) {
     return;
   }
 
-  button.addEventListener(
-    'click',
-    (event) => {
-      event.stopPropagation();
-      const isOpen =
-        nav.classList.toggle('open');
-      button.classList.toggle(
-        'active',
-        isOpen
-      );
+  button.addEventListener('click', event => {
+    event.stopPropagation();
+
+    const isOpen =
+      nav.classList.toggle('open');
+
+    button.classList.toggle(
+      'active',
+      isOpen
+    );
+
+    button.setAttribute(
+      'aria-expanded',
+      String(isOpen)
+    );
+
+    button.setAttribute(
+      'aria-label',
+      isOpen
+        ? 'Fechar menu'
+        : 'Abrir menu'
+    );
+  });
+
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+
+      button.classList.remove('active');
 
       button.setAttribute(
         'aria-expanded',
-        String(isOpen)
+        'false'
       );
 
       button.setAttribute(
         'aria-label',
-        isOpen
-          ? 'Fechar menu'
-          : 'Abrir menu'
-      );
-    }
-  );
-
-  links
-    .querySelectorAll('a')
-    .forEach(link => {
-      link.addEventListener(
-        'click',
-        () => {
-          nav.classList.remove('open');
-          button.classList.remove('active');
-          button.setAttribute(
-            'aria-expanded',
-            'false'
-          );
-          button.setAttribute(
-            'aria-label',
-            'Abrir menu'
-          );
-        }
+        'Abrir menu'
       );
     });
+  });
 
-  document.addEventListener(
-    'click',
-    (event) => {
-      if (!navbar.contains(event.target)) {
-        nav.classList.remove('open');
-        button.classList.remove('active');
-        button.setAttribute(
-          'aria-expanded',
-          'false'
-        );
-      }
+  document.addEventListener('click', event => {
+    if (!navbar.contains(event.target)) {
+      nav.classList.remove('open');
+
+      button.classList.remove('active');
+
+      button.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      button.setAttribute(
+        'aria-label',
+        'Abrir menu'
+      );
     }
-  );
+  });
 
-  button.dataset.menuReady =
-    'true';
+  button.dataset.menuReady = 'true';
 }
 
 function setupCarousel() {
   const track =
-    document.getElementById(
-      'carouselTrack'
-    ) ||
-    document.querySelector(
-      '.carousel-track'
-    );
+    document.getElementById('carouselTrack') ||
+    document.querySelector('.carousel-track');
 
   const slides =
-    document.querySelectorAll(
-      '.carousel-slide'
-    );
+    document.querySelectorAll('.carousel-slide');
 
   const indicators =
-    document.querySelectorAll(
-      '.indicator'
-    );
+    document.querySelectorAll('.indicator');
 
   const prevButton =
-    document.getElementById(
-      'prevBtn'
-    );
+    document.getElementById('prevBtn');
 
   const nextButton =
-    document.getElementById(
-      'nextBtn'
-    );
+    document.getElementById('nextBtn');
 
-  if (
-    !track ||
-    slides.length === 0
-  ) {
+  if (!track || slides.length === 0) {
     return;
   }
 
   function showSlide(index) {
     currentSlide =
-      (index + slides.length) %
-      slides.length;
+      (index + slides.length) % slides.length;
 
     track.style.transform =
       `translateX(-${currentSlide * 100}%)`;
-    indicators.forEach(
-      (indicator, i) => {
-        indicator.classList.toggle(
-          'active',
-          i === currentSlide
-        );
-      }
-    );
+
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle(
+        'active',
+        i === currentSlide
+      );
+    });
   }
 
-  prevButton?.addEventListener(
-    'click',
-    () => {
-      showSlide(
-        currentSlide - 1
-      );
-    }
-  );
+  prevButton?.addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+  });
 
-  nextButton?.addEventListener(
-    'click',
-    () => {
-      showSlide(
-        currentSlide + 1
-      );
-    }
-  );
+  nextButton?.addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+  });
 
-  indicators.forEach(
-    indicator => {
-      indicator.addEventListener(
-        'click',
-        () => {
-          const index =
-            Number(
-              indicator.dataset.index
-            );
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+      const index =
+        Number(indicator.dataset.index);
 
-          if (!Number.isNaN(index)) {
-            showSlide(index);
-          }
-        }
-      );
-    }
-  );
+      if (!Number.isNaN(index)) {
+        showSlide(index);
+      }
+    });
+  });
+
   showSlide(0);
 }
 
 function setupForms() {
-  const form =
-    document.querySelector('form');
+  const form = document.querySelector('form');
+
   if (!form) {
     return;
   }
+
   const title =
-    document.querySelector(
-      '.form-header h1'
-    )?.textContent
+    document.querySelector('.form-header h1')
+      ?.textContent
       ?.trim()
       .toUpperCase();
 
   const isCadastro =
-    title?.includes(
-      'CRIE SUA CONTA'
-    );
+    title?.includes('CRIE SUA CONTA');
 
   const isLogin =
-    title?.includes(
-      'FAÇA SEU LOGIN'
-    );
+    title?.includes('FAÇA SEU LOGIN');
+
   if (isCadastro) {
-    form.addEventListener(
-      'submit',
-      event => {
-        event.preventDefault();
-        const inputs =
-          form.querySelectorAll(
-            'input'
-          );
-        const nome =
-          inputs[0]?.value
-            .trim();
+    form.addEventListener('submit', event => {
+      event.preventDefault();
 
-        const email =
-          inputs[1]?.value
-            .trim()
-            .toLowerCase();
+      const inputs =
+        form.querySelectorAll('input');
 
-        const senha =
-          inputs[2]?.value;
+      const nome =
+        inputs[0]?.value.trim();
 
-        const confirmar =
-          inputs[3]?.value;
-        if (
-          !nome ||
-          !email ||
-          !senha ||
-          !confirmar
-        ) {
-          alert(
-            'Preencha todos os campos.'
-          );
-          return;
-        }
+      const email =
+        inputs[1]?.value
+          .trim()
+          .toLowerCase();
 
-        if (
-          senha !== confirmar
-        ) {
-          alert(
-            'As senhas não coincidem.'
-          );
-          return;
-        }
-        localStorage.setItem(
-          'vittaSafeUser',
-          JSON.stringify({
-            nome,
-            email,
-            senha
-          })
+      const senha =
+        inputs[2]?.value;
+
+      const confirmar =
+        inputs[3]?.value;
+
+      if (
+        !nome ||
+        !email ||
+        !senha ||
+        !confirmar
+      ) {
+        alert(
+          'Preencha todos os campos.'
         );
 
-        alert(
-          'Cadastro realizado! Agora você pode fazer login.');
-        window.location.href =
-          'login.html';
+        return;
       }
-    );
+
+      if (senha !== confirmar) {
+        alert(
+          'As senhas não coincidem.'
+        );
+
+        return;
+      }
+
+      localStorage.setItem(
+        'vittaSafeUser',
+        JSON.stringify({
+          nome,
+          email,
+          senha
+        })
+      );
+
+      alert(
+        'Cadastro realizado! Agora você pode fazer login.'
+      );
+
+      window.location.href =
+        'login.html';
+    });
   }
 
   if (isLogin) {
-    form.addEventListener(
-      'submit',
-      event => {
-        const user =
-          JSON.parse(
-            localStorage.getItem(
-              'vittaSafeUser'
-            ) || 'null'
-          );
-        if (!user) {
-          event.preventDefault();
-          alert(
-            'Nenhuma conta cadastrada neste dispositivo. Faça seu cadastro primeiro.'
-          );
-          return;
-        }
-        const email = form
-            .querySelector(
-              'input[type="email"]')
-            ?.value
-            .trim()
-            .toLowerCase();
-        const senha =
-          form
-            .querySelector(
-              'input[type="password"]')
-            ?.value;
-        if (
-          email !== user.email ||
-          senha !== user.senha) {
-          event.preventDefault();
-          alert(
-            'E-mail ou senha incorretos.'
-          );
-        }
+    form.addEventListener('submit', event => {
+      const user =
+        JSON.parse(
+          localStorage.getItem(
+            'vittaSafeUser'
+          ) || 'null'
+        );
+
+      if (!user) {
+        event.preventDefault();
+
+        alert(
+          'Nenhuma conta cadastrada neste dispositivo. Faça seu cadastro primeiro.'
+        );
+
+        return;
       }
-    );
+
+      const email =
+        form
+          .querySelector(
+            'input[type="email"]'
+          )
+          ?.value
+          .trim()
+          .toLowerCase();
+
+      const senha =
+        form
+          .querySelector(
+            'input[type="password"]'
+          )
+          ?.value;
+
+      if (
+        email !== user.email ||
+        senha !== user.senha
+      ) {
+        event.preventDefault();
+
+        alert(
+          'E-mail ou senha incorretos.'
+        );
+      }
+    });
   }
 }
 
