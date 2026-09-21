@@ -141,9 +141,22 @@ body {
     display: none;
     border: 0;
     background: transparent;
-    color: #ffffff;
-    font-size: 28px;
     cursor: pointer;
+    width: 30px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    z-index: 20;
+}
+
+.mobile-menu-button span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: 0.3s ease;
 }
 
 .mobile-menu {
@@ -454,8 +467,8 @@ body.light-mode .card-text p {
     color: #607899;
 }
 
-body.light-mode .mobile-menu-button {
-    color: #17365f;
+body.light-mode .mobile-menu-button span {
+    background-color: #17365f;
 }
 
 @media (max-width: 1000px) {
@@ -490,7 +503,60 @@ body.light-mode .mobile-menu-button {
     }
 
     .mobile-menu-button {
+        display: flex;
+    }
+
+    .mobile-menu.active {
         display: block;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        border-radius: 0 0 22px 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(13, 11, 30, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu a {
+        display: block;
+        text-align: center;
+        padding: 12px 18px;
+        border-radius: 13px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.06);
+        transition: 0.25s ease;
+    }
+
+    .mobile-menu a:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    body.light-mode .mobile-menu.active {
+        background: rgba(255, 255, 255, 0.98);
+        border-top-color: rgba(56, 130, 190, 0.15);
+        box-shadow: 0 20px 40px rgba(42, 86, 130, 0.15);
+    }
+
+    body.light-mode .mobile-menu a {
+        color: #17365f;
+        background: rgba(56, 189, 248, 0.08);
     }
 
     .hero-content {
@@ -531,24 +597,19 @@ body.light-mode .mobile-menu-button {
     .hero-container {
         background-position: 65% center;
     }
-
     body.light-mode .hero-container {
         background-position: 65% center !important;
     }
-
     .hero-title {
         font-size: 48px;
     }
-
     .sub-tag {
         font-size: 11px;
     }
-
     .info-card {
         min-height: auto;
         align-items: flex-start;
     }
-
     .card-image-box {
         width: 55px;
         min-width: 55px;

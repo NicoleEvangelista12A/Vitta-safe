@@ -367,3 +367,20 @@ document.addEventListener(
     setupForms();
   }
 );
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuBtn.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuBtn.textContent = '☰';
+        });
+    });
+}
