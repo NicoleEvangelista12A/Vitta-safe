@@ -3,13 +3,11 @@ body {
     background-color: #0d0b1e;
     color: #ffffff;
     overflow-x: hidden;
-       background: 
-    radial-gradient(circle at 75% 35%, rgba(120, 50, 180, 0.35) 0%, rgba(25, 60, 110, 0.25) 40%, rgba(7, 9, 14, 0.95) 80%),
-    url('https://t4.ftcdn.net/jpg/01/94/68/65/360_F_194686589_7buCG2Gh3xWodYKlncTlYQtugRr43ZL1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background: radial-gradient(circle at 75% 35%, rgba(120, 50, 180, 0.35) 0%, rgba(25, 60, 110, 0.25) 40%, rgba(7, 9, 14, 0.95) 80%), url('https://t4.ftcdn.net/jpg/01/94/68/65/360_F_194686589_7buCG2Gh3xWodYKlncTlYQtugRr43ZL1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .guide-block-full {
@@ -209,12 +207,11 @@ body {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .steps-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .carousel-container {
         max-width: 100%;
     }

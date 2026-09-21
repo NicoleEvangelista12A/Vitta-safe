@@ -14,14 +14,13 @@ body {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(
-    135deg, 
-    rgba(38, 41, 180, 0.85) 0%, 
-    rgba(21, 65, 92, 0.7) 40%, 
-    rgba(60, 156, 168, 0.5) 75%, 
+    135deg,
+    rgba(38, 41, 180, 0.85) 0%,
+    rgba(21, 65, 92, 0.7) 40%,
+    rgba(60, 156, 168, 0.5) 75%,
     rgba(38, 41, 180, 0.85) 100%
-  ), 
+  ),
   url('https://img.magnific.com/vetores-gratis/particle-de-tecnologia-abstrata-realista-de-fundo_23-2148431735.jpg?semt=ais_test_b&w=740&q=80');
-  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,27 +42,6 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
-}
-
-.login-link {
-  margin-top: 20px;
-  font-size: 0.85rem;
-  color: #a0a0b0;
-  text-align: center;
-}
-
-.login-link a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
 }
 
 .btn-cadastrar {
@@ -200,28 +178,26 @@ form input:focus {
   text-decoration: underline;
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
   .navbar {
     padding: 20px 4%;
   }
-  
+
   .nav-links {
     gap: 15px;
   }
-  
+
   .form-card {
     max-width: 480px;
     padding: 35px 30px;
   }
 }
 
-/* Tablets em retrato*/
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     gap: 15px;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
   }
 
@@ -241,11 +217,10 @@ form input:focus {
   }
 
   .cadastro-container {
-    background-attachment: scroll; 
+    background-attachment: scroll;
   }
 }
 
-/* Celulares (Telas até 480px) */
 @media (max-width: 480px) {
   .navbar {
     padding: 15px 10px;

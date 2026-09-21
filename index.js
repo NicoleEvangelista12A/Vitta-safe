@@ -1,120 +1,399 @@
 let currentSlide = 0;
 
-  function updateCarousel() {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    if (!track || slides.length === 0) return;
+function updateThemeButton(button) {
 
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  if (!button) {
+    return;
+  }
 
-    indicators.forEach((ind, index) => {
-      if (index === currentSlide) {
-        ind.classList.add('active');
-      } else {
-        ind.classList.remove('active');
-      }
+  const isLight =
+    document.body.classList.contains('light-mode');
+
+  button.textContent = isLight ? '☀️' : '🌙';
+
+  button.setAttribute(
+    'aria-label',
+    isLight
+      ? 'Ativar modo escuro'
+      : 'Ativar modo claro'
+  );
+
+  button.setAttribute(
+    'title',
+    isLight
+      ? 'Modo escuro'
+      : 'Modo claro'
+  );
+}
+
+
+function setupTheme() {
+
+  let button =
+    document.getElementById('botao-tema');
+  if (!button) {
+    button = document.createElement('button');
+    button.id = 'botao-tema';
+    button.type = 'button';
+    document.body.appendChild(button);
+  }
+
+  const savedTheme =
+    localStorage.getItem('tema');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  } else {
+    document.body.classList.remove('light-mode');
+  }
+
+  updateThemeButton(button);
+
+  if (button.dataset.themeReady) {
+    return;
+  }
+  button.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const theme =
+      document.body.classList.contains('light-mode')
+        ? 'light'
+        : 'dark';
+    localStorage.setItem(
+      'tema',
+      theme
+    );
+
+    updateThemeButton(button);
+
+  });
+  button.dataset.themeReady = 'true';
+}
+
+function setupMobileMenu() {
+  const navbar =
+    document.querySelector('.navbar');
+  if (!navbar) {
+    return;
+  }
+
+  const nav =
+    navbar.querySelector('nav');
+  const links =
+    navbar.querySelector('.nav-links');
+  if (!nav || !links) {
+    return;
+  }
+
+  let button =
+    navbar.querySelector(
+      '.mobile-menu-button, .menu'
+    );
+
+  if (!button) {
+    button =
+      document.createElement('button');
+    button.className =
+      'mobile-menu-button';
+    button.type = 'button';
+    button.innerHTML =
+      '<span></span><span></span><span></span>';
+    navbar.insertBefore(
+      button,
+      nav
+    );
+  }
+
+  button.setAttribute(
+    'aria-expanded',
+    'false'
+  );
+
+  if (button.dataset.menuReady) {
+    return;
+  }
+
+  button.addEventListener(
+    'click',
+    (event) => {
+      event.stopPropagation();
+      const isOpen =
+        nav.classList.toggle('open');
+      button.classList.toggle(
+        'active',
+        isOpen
+      );
+
+      button.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      button.setAttribute(
+        'aria-label',
+        isOpen
+          ? 'Fechar menu'
+          : 'Abrir menu'
+      );
+    }
+  );
+
+  links
+    .querySelectorAll('a')
+    .forEach(link => {
+      link.addEventListener(
+        'click',
+        () => {
+          nav.classList.remove('open');
+          button.classList.remove('active');
+          button.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+          button.setAttribute(
+            'aria-label',
+            'Abrir menu'
+          );
+        }
+      );
     });
-  }
 
-  function moveSlide(direction) {
-    const slides = document.querySelectorAll('.carousel-slide');
-    currentSlide += direction;
-
-    if (currentSlide < 0) {
-      currentSlide = slides.length - 1;
-    } else if (currentSlide >= slides.length) {
-      currentSlide = 0;
+  document.addEventListener(
+    'click',
+    (event) => {
+      if (!navbar.contains(event.target)) {
+        nav.classList.remove('open');
+        button.classList.remove('active');
+        button.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      }
     }
+  );
 
-    updateCarousel();
-  }
-
-  function currentSlideTo(index) {
-    currentSlide = index;
-    updateCarousel();
-  }
-
-const botaoTema = document.getElementById('botao-tema');
-const body = document.body;
-
-const temaSalvo = localStorage.getItem('tema');
-if (temaSalvo === 'light') {
-  body.classList.add('light-mode');
-  if (botaoTema) botaoTema.textContent = '☀️'; 
-} else {
-  body.classList.remove('light-mode');
-  if (botaoTema) botaoTema.textContent = '🌙'; 
+  button.dataset.menuReady =
+    'true';
 }
 
-if (botaoTema) {
-  botaoTema.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    
-    if (body.classList.contains('light-mode')) {
-      localStorage.setItem('tema', 'light');
-      botaoTema.textContent = '☀️'; 
-    } else {
-      localStorage.setItem('tema', 'dark');
-      botaoTema.textContent = '🌙'; 
+function setupCarousel() {
+  const track =
+    document.getElementById(
+      'carouselTrack'
+    ) ||
+    document.querySelector(
+      '.carousel-track'
+    );
+
+  const slides =
+    document.querySelectorAll(
+      '.carousel-slide'
+    );
+
+  const indicators =
+    document.querySelectorAll(
+      '.indicator'
+    );
+
+  const prevButton =
+    document.getElementById(
+      'prevBtn'
+    );
+
+  const nextButton =
+    document.getElementById(
+      'nextBtn'
+    );
+
+  if (
+    !track ||
+    slides.length === 0
+  ) {
+    return;
+  }
+
+  function showSlide(index) {
+    currentSlide =
+      (index + slides.length) %
+      slides.length;
+
+    track.style.transform =
+      `translateX(-${currentSlide * 100}%)`;
+    indicators.forEach(
+      (indicator, i) => {
+        indicator.classList.toggle(
+          'active',
+          i === currentSlide
+        );
+      }
+    );
+  }
+
+  prevButton?.addEventListener(
+    'click',
+    () => {
+      showSlide(
+        currentSlide - 1
+      );
     }
-  });
+  );
+
+  nextButton?.addEventListener(
+    'click',
+    () => {
+      showSlide(
+        currentSlide + 1
+      );
+    }
+  );
+
+  indicators.forEach(
+    indicator => {
+      indicator.addEventListener(
+        'click',
+        () => {
+          const index =
+            Number(
+              indicator.dataset.index
+            );
+
+          if (!Number.isNaN(index)) {
+            showSlide(index);
+          }
+        }
+      );
+    }
+  );
+  showSlide(0);
 }
 
-//Responsivo
-const menuToggle = document.getElementById('menu-direito') || document.querySelector('.menu');
-const navLinks = document.getElementById('navLinks');
+function setupForms() {
+  const form =
+    document.querySelector('form');
+  if (!form) {
+    return;
+  }
+  const title =
+    document.querySelector(
+      '.form-header h1'
+    )?.textContent
+      ?.trim()
+      .toUpperCase();
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-  });
+  const isCadastro =
+    title?.includes(
+      'CRIE SUA CONTA'
+    );
+
+  const isLogin =
+    title?.includes(
+      'FAÇA SEU LOGIN'
+    );
+  if (isCadastro) {
+    form.addEventListener(
+      'submit',
+      event => {
+        event.preventDefault();
+        const inputs =
+          form.querySelectorAll(
+            'input'
+          );
+        const nome =
+          inputs[0]?.value
+            .trim();
+
+        const email =
+          inputs[1]?.value
+            .trim()
+            .toLowerCase();
+
+        const senha =
+          inputs[2]?.value;
+
+        const confirmar =
+          inputs[3]?.value;
+        if (
+          !nome ||
+          !email ||
+          !senha ||
+          !confirmar
+        ) {
+          alert(
+            'Preencha todos os campos.'
+          );
+          return;
+        }
+
+        if (
+          senha !== confirmar
+        ) {
+          alert(
+            'As senhas não coincidem.'
+          );
+          return;
+        }
+        localStorage.setItem(
+          'vittaSafeUser',
+          JSON.stringify({
+            nome,
+            email,
+            senha
+          })
+        );
+
+        alert(
+          'Cadastro realizado! Agora você pode fazer login.');
+        window.location.href =
+          'login.html';
+      }
+    );
+  }
+
+  if (isLogin) {
+    form.addEventListener(
+      'submit',
+      event => {
+        const user =
+          JSON.parse(
+            localStorage.getItem(
+              'vittaSafeUser'
+            ) || 'null'
+          );
+        if (!user) {
+          event.preventDefault();
+          alert(
+            'Nenhuma conta cadastrada neste dispositivo. Faça seu cadastro primeiro.'
+          );
+          return;
+        }
+        const email = form
+            .querySelector(
+              'input[type="email"]')
+            ?.value
+            .trim()
+            .toLowerCase();
+        const senha =
+          form
+            .querySelector(
+              'input[type="password"]')
+            ?.value;
+        if (
+          email !== user.email ||
+          senha !== user.senha) {
+          event.preventDefault();
+          alert(
+            'E-mail ou senha incorretos.'
+          );
+        }
+      }
+    );
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-            let slideIndex = 0;
-            const track = document.getElementById('carouselTrack');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const indicators = document.querySelectorAll('.indicator');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-
-            function showSlide(index) {
-                if (!track || slides.length === 0) return;
-
-                if (index >= slides.length) {
-                    slideIndex = 0;
-                } else if (index < 0) {
-                    slideIndex = slides.length - 1;
-                } else {
-                    slideIndex = index;
-                }
-
-                track.style.transform = `translateX(-${slideIndex * 100}%)`;
-
-                indicators.forEach((ind, i) => {
-                    if (i === slideIndex) {
-                        ind.classList.add('active');
-                    } else {
-                        ind.classList.remove('active');
-                    }
-                });
-            }
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => showSlide(slideIndex + 1));
-            }
-
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => showSlide(slideIndex - 1));
-            }
-
-            indicators.forEach((ind) => {
-                ind.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showSlide(index);
-                });
-            });
-        });
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    setupTheme();
+    setupMobileMenu();
+    setupCarousel();
+    setupForms();
+  }
+);
