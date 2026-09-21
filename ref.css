@@ -9,9 +9,9 @@ body {
     background:
         radial-gradient(
             circle at 75% 35%,
-            rgba(120, 50, 180, 0.35) 0%,
-            rgba(25, 60, 110, 0.25) 40%,
-            rgba(7, 9, 14, 0.95) 80%
+            rgba(45, 10, 75, 0.6) 0%,
+            rgba(5, 15, 35, 0.75) 40%,
+            rgba(1, 2, 4, 0.99) 80%
         ),
         url('https://t4.ftcdn.net/jpg/01/94/68/65/360_F_194686589_7buCG2Gh3xWodYKlncTlYQtugRr43ZL1.jpg');
     background-size: cover;
@@ -27,8 +27,8 @@ body.light-mode {
     background:
         linear-gradient(
             90deg,
-            rgba(248, 251, 255, 0.72),
-            rgba(238, 248, 255, 0.58)
+            rgba(238, 245, 252, 0.85),
+            rgba(222, 238, 250, 0.72)
         ),
         url('https://png.pngtree.com/thumb_back/fh260/background/20210715/pngtree-business-geometric-technology-slide-hexagon-light-dot-light-blue-background-image_742356.jpg') !important;
     background-size: cover !important;
@@ -47,19 +47,20 @@ body.light-mode {
     min-height: 68px;
     margin: 20px auto 0;
     padding: 12px 20px;
-    background: rgba(13, 11, 30, 0.78);
+    background: rgba(5, 4, 12, 0.95);
     backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
     position: sticky;
     top: 15px;
     z-index: 100;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
 }
 
 body.light-mode .navbar {
-    background: rgba(255, 255, 255, 0.88) !important;
-    border: 1px solid rgba(67, 137, 190, 0.14) !important;
-    box-shadow: 0 10px 30px rgba(42, 86, 130, 0.08);
+    background: rgba(255, 255, 255, 0.92) !important;
+    border: 1px solid rgba(67, 137, 190, 0.20) !important;
+    box-shadow: 0 10px 30px rgba(42, 86, 130, 0.15);
 }
 
 .logo {
@@ -161,17 +162,17 @@ body.light-mode .nav-links a.active {
     gap: 8px;
     padding: 8px 17px;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.09);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #b9cbe0;
     font-size: 0.82rem;
     backdrop-filter: blur(12px);
 }
 
 body.light-mode .badge-tag {
-    background: rgba(255, 255, 255, 0.72) !important;
-    border-color: rgba(67, 137, 190, 0.16) !important;
-    color: #6683a4 !important;
+    background: rgba(255, 255, 255, 0.82) !important;
+    border-color: rgba(67, 137, 190, 0.22) !important;
+    color: #527196 !important;
 }
 
 .pulse-dot {
@@ -207,7 +208,7 @@ body.light-mode .hero-section h1 {
 }
 
 body.light-mode .hero-desc {
-    color: #607895 !important;
+    color: #4a6482 !important;
 }
 
 .glass-card {
@@ -216,20 +217,20 @@ body.light-mode .hero-desc {
     display: flex;
     flex-direction: column;
     gap: 26px;
-    background: rgba(13, 16, 35, 0.72);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(4, 5, 12, 0.93);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 22px;
     box-shadow:
-        0 22px 55px rgba(0, 0, 0, 0.38),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        0 30px 70px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 body.light-mode .glass-card {
-    background: rgba(255, 255, 255, 0.88) !important;
-    border-color: rgba(67, 137, 190, 0.14) !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-color: rgba(67, 137, 190, 0.22) !important;
     box-shadow:
-        0 18px 45px rgba(42, 86, 130, 0.1) !important;
+        0 20px 50px rgba(23, 54, 95, 0.22) !important;
 }
 
 .links-header {
@@ -251,11 +252,11 @@ body.light-mode .links-header h2 {
 .divider-line {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 body.light-mode .divider-line {
-    background: rgba(67, 137, 190, 0.14) !important;
+    background: rgba(67, 137, 190, 0.2) !important;
 }
 
 .section-subtitle {
@@ -278,8 +279,8 @@ body.light-mode .section-subtitle {
 .link-item-box {
     padding: 17px 20px;
     border-radius: 13px;
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -289,20 +290,20 @@ body.light-mode .section-subtitle {
 
 .link-item-box:hover {
     transform: translateX(6px);
-    background: rgba(56, 189, 248, 0.08);
+    background: rgba(56, 189, 248, 0.06);
     border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 body.light-mode .link-item-box {
-    background: rgba(248, 251, 255, 0.9) !important;
-    border-color: rgba(67, 137, 190, 0.13) !important;
+    background: rgba(242, 248, 255, 0.95) !important;
+    border-color: rgba(67, 137, 190, 0.18) !important;
 }
 
 body.light-mode .link-item-box:hover {
-    background: rgba(239, 249, 255, 0.98) !important;
-    border-color: rgba(56, 189, 248, 0.38) !important;
-    box-shadow: 0 8px 25px rgba(42, 137, 190, 0.08);
+    background: rgba(232, 244, 255, 1) !important;
+    border-color: rgba(56, 189, 248, 0.45) !important;
+    box-shadow: 0 8px 25px rgba(42, 86, 130, 0.15);
 }
 
 .link-item-box a {
@@ -320,7 +321,7 @@ body.light-mode .link-item-box:hover {
 }
 
 body.light-mode .link-item-box a {
-    color: #607895 !important;
+    color: #4a6482 !important;
 }
 
 body.light-mode .link-item-box:hover a {
@@ -335,7 +336,7 @@ body.light-mode .link-item-box:hover a {
 }
 
 body.light-mode .footer-note {
-    color: #71859e !important;
+    color: #5f758f !important;
 }
 
 .back-navigation {
@@ -353,29 +354,29 @@ body.light-mode .footer-note {
     color: #dce8f5;
     text-decoration: none;
     font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     transition: all 0.25s ease;
 }
 
 .btn-back:hover {
     color: #ffffff;
-    background: rgba(56, 189, 248, 0.1);
+    background: rgba(56, 189, 248, 0.08);
     border-color: rgba(56, 189, 248, 0.45);
     transform: translateX(-4px);
 }
 
 body.light-mode .btn-back {
-    color: #294666 !important;
-    background: rgba(255, 255, 255, 0.72) !important;
-    border-color: rgba(67, 137, 190, 0.15) !important;
+    color: #1f3956 !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(67, 137, 190, 0.22) !important;
 }
 
 body.light-mode .btn-back:hover {
     color: #168bd0 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border-color: rgba(56, 189, 248, 0.35) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    border-color: rgba(56, 189, 248, 0.45) !important;
 }
 
 .site-footer {
@@ -384,12 +385,12 @@ body.light-mode .btn-back:hover {
     margin-top: 10px;
     font-size: 0.8rem;
     color: #64748b;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 body.light-mode .site-footer {
-    color: #71859e !important;
-    border-top-color: rgba(67, 137, 190, 0.12) !important;
+    color: #647a96 !important;
+    border-top-color: rgba(67, 137, 190, 0.18) !important;
 }
 
 @keyframes pulseAnim {
