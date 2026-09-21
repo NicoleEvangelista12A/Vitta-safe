@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="conteudo.css">
-     <link rel="stylesheet" href="tema.css">
-     <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="tema.css">
+    <script type="module" src="./index.js"></script>
 </head>
 <body>
 
@@ -19,37 +19,51 @@
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="conteudo.html" class="active">O Projeto</a></li>
-                <a href="guia.html">Guia</a>
-                <a href="custo.html">Custo</a>
-                <a href="jogo.html">Jogo</a>
-                <a href="nos.html">Sobre nós</a>
-                <a href="ref.html">ref</a>
+                <li><a href="guia.html">Guia</a></li>
+                <li><a href="custo.html">Custo</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="nos.html">Sobre nós</a></li>
+                <li><a href="ref.html">ref</a></li>
             </ul>
         </nav>
+        
         <button
-        class="mobile-menu-button"
-        id="menu"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+            class="mobile-menu-button"
+            id="menu"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="conteudo.html" class="active">O Projeto</a></li>
+                <li><a href="guia.html">Guia</a></li>
+                <li><a href="custo.html">Custo</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="nos.html">Sobre nós</a></li>
+                <li><a href="ref.html">ref</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="page-container">
         
-        <section class="hero-section">
-            <div class="badge-tag">
-                <span class="pulse-dot"></span>
-                <span>Inovação & Saúde Preventiva</span>
-            </div>
-            <h1>A segurança que você veste. <br>A vida que você protege.</h1>
-            <p class="hero-desc">
-                A revolução em forma de pulseira: monitoramento inteligente que prevê riscos e salva vidas antes mesmo do primeiro sintoma de crises ou desmaios súbitos.
-            </p>
+            <section class="hero-section">
+                <div class="badge-tag">
+                    <span class="pulse-dot"></span>
+                    <span>Inovação & Saúde Preventiva</span>
+                </div>
+                <h1>A segurança que você veste. <br>A vida que você protege.</h1>
+                <p class="hero-desc">
+                    A revolução em forma de pulseira...
+                </p>
+            </section>
         </section>
 
         <section class="content-block glass-card">
@@ -72,7 +86,7 @@
         <section class="content-block reverse glass-card">
             <div class="image-side">
                 <div class="mockup-box">
-                 <img src="./vitaaa.jpg" alt="">
+                   <img src="./vitaaa.jpg" alt="">
                 </div>
             </div>
             <div class="text-side">
@@ -107,10 +121,12 @@
             </div>
 
         </section>
-      <div class="menu-direito">
-  <button id="botao-tema">☀️</button>
-</div>
+        
+        <div class="menu-direito">
+            <button id="botao-tema">☀️</button>
+        </div>
     </main>
+
     <footer class="site-footer">
         <p>&copy; 2026 Inovax Techmind. Todos os direitos reservados.</p>
     </footer>

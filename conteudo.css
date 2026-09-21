@@ -26,6 +26,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.mobile-menu {
+    display: none;
+}
+
 .mobile-menu-button {
     display: none;
     border: 0;
@@ -46,6 +50,10 @@ body {
     background-color: #ffffff;
     border-radius: 2px;
     transition: 0.3s ease;
+}
+
+body.light-mode .mobile-menu-button span {
+    background-color: #0a1625;
 }
 
 .navbar {
@@ -570,6 +578,9 @@ body.light-mode .site-footer {
         display: flex;
     }
     
+    .mobile-menu {
+        display: none; 
+    }
     .mobile-menu.active {
         display: block;
         position: absolute;
